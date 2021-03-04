@@ -1,14 +1,14 @@
 {
   "name": "@ddatabase/byte-stream",
   "version": "1.0.0",
-  "description": "A Readable stream wrapper around dDatabase that supports reading byte ranges",
+  "description": "A Readable stream wrapper around DDatabase that supports reading byte ranges.",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dwebprotocol/ddatabase-byte-stream"
+    "url": "https://github.com/dwebprotocol/ddatabase-byte-stream.git"
   },
   "keywords": [
     "ddatabase",
