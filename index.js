@@ -1,9 +1,9 @@
 const assert = require('assert')
 const { Readable } = require('readable-stream')
 
-module.exports = (feed, opts) => new HypercoreByteStream(feed, opts)
+module.exports = (feed, opts) => new DDatabaseByteStream(feed, opts)
 
-class HypercoreByteStream extends Readable {
+class DDatabaseByteStream extends Readable {
   constructor (opts) {
     super({ ...opts, encoding: null })
     opts = opts || {}
