@@ -1,6 +1,6 @@
 {
   "name": "@ddatabase/byte-stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Readable stream wrapper around DDatabase that supports reading byte ranges.",
   "main": "index.js",
   "scripts": {
