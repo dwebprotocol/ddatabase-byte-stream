@@ -20,7 +20,7 @@ function createLocal (numRecords, recordSize, cb) {
 }
 
 function createRemote (numRecords, recordSize, cb) {
-  const core1 = ddatabase(ram, { sparse: true })
+  const base1 = ddatabase(ram, { sparse: true })
 
   const records = []
   for (let i = 0; i < numRecords; i++) {
@@ -28,16 +28,16 @@ function createRemote (numRecords, recordSize, cb) {
     records.push(record)
   }
 
-  core1.append(records, err => {
+  base1.append(records, err => {
     if (err) return cb(err)
 
-    const core2 = ddatabase(ram, core1.key, { sparse: true })
+    const base2 = ddatabase(ram, base1.key, { sparse: true })
 
-    const s1 = core1.replicate(true, { live: true })
-    s1.pipe(core2.replicate(false, { live: true })).pipe(s1)
+    const s1 = base1.replicate(true, { live: true })
+    s1.pipe(base2.replicate(false, { live: true })).pipe(s1)
 
     const stream = createStream()
-    return cb(null, core1, core2, stream, records)
+    return cb(null, base1, base2, stream, records)
   })
 }
 

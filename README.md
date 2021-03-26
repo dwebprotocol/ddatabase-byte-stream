@@ -16,9 +16,9 @@ const ram = require('random-access-memory')
 const ddatabase = require('ddatabase')
 const createByteStream = require('@ddatabase/byte-stream')
 
-let core = ddatabase(ram)
+let base = ddatabase(ram)
 let stream = createByteStream({
-  feed: core
+  feed: base
 })
 ```
 
@@ -29,7 +29,7 @@ Creates a new byte stream.
 If specified, options can include:
 ```js
 {
-  feed: core, // A dDatabase.
+  feed: base, // A dDatabase.
   byteOffset: 0, // Starting offset in bytes from the start of the feed.
   byteLength: 10, // The number of bytes to read.
   blockOffset: 0, // An optional starting block heuristic (optimization).
